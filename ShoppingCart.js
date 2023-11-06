@@ -8,3 +8,5 @@ export function addToCart(item){
   cart.push(item)
   console.log(`item ${item} added to cart`);
 }
+
+export {shoppingCost, cart}
