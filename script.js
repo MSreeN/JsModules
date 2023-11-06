@@ -4,9 +4,9 @@ console.log("from script file");
 
 // addToCart("shirt")
 
-import * as ShoppingCart from './ShoppingCart.js'
+import addToCart,* as ShoppingCart from './ShoppingCart.js'
 
-const {addToCart, shoppingCost} = ShoppingCart;
+const {shoppingCost} = ShoppingCart;
 
 addToCart('shirt')
 console.log('cost is', shoppingCost);
