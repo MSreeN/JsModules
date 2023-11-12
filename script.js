@@ -39,3 +39,6 @@ console.log(createSupplier.getName());
 //this gives an error because price is private to that iife module and we can't access it outside, this is module pattern. look up on internet for more information
 // console.log(createSupplier.price);
 
+if(module.hot){
+  module.hot.accept();
+}
