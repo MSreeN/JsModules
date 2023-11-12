@@ -6,7 +6,7 @@ const cart = [];
 
 console.log("start fetching");
 
-await fetch('https://jsonplaceholder.typicode.com/posts');
+// await fetch('https://jsonplaceholder.typicode.com/posts');
 
 console.log("done fetching");
 

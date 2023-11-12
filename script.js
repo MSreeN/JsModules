@@ -5,6 +5,7 @@ console.log("importing shopping cart");
 // addToCart("shirt")
 
 import addToCart,* as ShoppingCart from './ShoppingCart.js'
+import cloneDeep from './node_modules/lodash-es'
 
 const {shoppingCost} = ShoppingCart;
 
@@ -34,4 +35,7 @@ const createSupplier = (function () {
 createSupplier.name;
 createSupplier.field;
 console.log(createSupplier.getName());
+
+//this gives an error because price is private to that iife module and we can't access it outside, this is module pattern. look up on internet for more information
+// console.log(createSupplier.price);
 
