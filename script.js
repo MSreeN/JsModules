@@ -31,9 +31,7 @@ const createSupplier = (function () {
   };
 })();
 
-console.log(ShoppingCart.cart);
 
-addToCart('apple')
 
 createSupplier.name;
 createSupplier.field;
@@ -43,7 +41,12 @@ console.log(createSupplier.getName());
 // console.log(createSupplier.price);
 
 
-//below code is used to maintain state of project using parcel, fo example you have an array of 3 objects inside it, on first render it will show array with 3 objects in it
+//below code is used to maintain state of project using parcel, fo example you have an array of 3 objects inside it, on first render it will show array with 3 objects in it, if you save it then render it again then array would have 6 objects and on next render array will have 12 objects
+//what is happening is parcel is saving previous state and adding new state to the previous state
 if(module.hot){
-  module.hot.accept();
+  module.hot.accept(function(){
+    ShoppingCart.cart.splice(0, ShoppingCart.cart.length)
+  });
 }
+addToCart('apple')
+console.log(ShoppingCart.cart);
