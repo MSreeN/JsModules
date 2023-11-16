@@ -1,5 +1,5 @@
 // import { addToCart } from "./ShoppingCart.js";
-
+import 'core-js'
 console.log("importing shopping cart");
 
 // addToCart("shirt")
@@ -54,3 +54,16 @@ console.log(ShoppingCart.cart);
 
 let name = "sree";
 console.log(name);
+
+class Person{
+  #name;
+  constructor(name){
+    this.#name = name;
+  }
+}
+
+const sree = new Person("sree")
+console.log(sree);
+
+const a = ShoppingCart.cart.find(ele => ele == "apple")
+console.log(a);
