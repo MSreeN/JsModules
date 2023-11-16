@@ -43,6 +43,7 @@ console.log(createSupplier.getName());
 
 //below code is used to maintain state of project using parcel, fo example you have an array of 3 objects inside it, on first render it will show array with 3 objects in it, if you save it then render it again then array would have 6 objects and on next render array will have 12 objects
 //what is happening is parcel is saving previous state and adding new state to the previous state
+//findings: objects are getting doubled after refreshing the application/page, this feature is meant to be used in development, we don't refresh the application every time when application is in development
 if(module.hot){
   module.hot.accept(function(){
     ShoppingCart.cart.splice(0, ShoppingCart.cart.length)
@@ -50,3 +51,6 @@ if(module.hot){
 }
 addToCart('apple')
 console.log(ShoppingCart.cart);
+
+let name = "sree";
+console.log(name);
