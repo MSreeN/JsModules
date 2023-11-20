@@ -1,5 +1,6 @@
 // import { addToCart } from "./ShoppingCart.js";
-import "core-js";
+import { Function } from "core-js";
+import "core-js/stable";
 console.log("importing shopping cart");
 
 // addToCart("shirt")
@@ -60,6 +61,8 @@ console.log(sree);
 const a = ShoppingCart.cart.find((ele) => ele == "apple");
 console.log(a);
 
+//transpiling means replacing the equivalent syntax in older versions
+//polyfilling means making the new feature work in older version by converting or implementing the same feature using older version syntax, like writing the js code that acts like the new feature in older versions
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("promise resolved");
@@ -67,3 +70,17 @@ const promise = new Promise((resolve, reject) => {
 });
 
 console.log(promise);
+
+//polyfillilng
+
+function sample() {
+  console.log("this is sample function");
+  const name = "sree";
+}
+
+Function.prototype.myFun = function () {
+  let obj = this;
+  console.log(obj.name);
+};
+
+sample.myFun();
