@@ -59,3 +59,6 @@ const logBigExpenses = function (limit) {
 };
 
 logBigExpenses(500);
+
+//Imperative programming is about specifying "how to do", like specifying each and every step
+//Declarative programming is about describing "what to do", like specifying what to do like using map method on array, we tell map method to loop through the array but we don't tell it how to do it
