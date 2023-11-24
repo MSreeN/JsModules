@@ -18,16 +18,24 @@ const spendingLimits = {
 
 const getLimit = (user) => spendingLimits?.[user] ?? 0;
 
-const add = function (value, description, user = "jonas") {
+const addExpense = function (
+  state,
+  limits,
+  value,
+  description,
+  user = "jonas"
+) {
+  let cleanUser = user.toLowerCase();
   user = user.toLowerCase();
 
-  if (value <= getLimit(user)) {
-    // budget.push({ value: -value, description, user });
-  }
+  return value <= getLimit(user)
+    ? [...state, { value: -value, description, user: cleanUser }]
+    : state;
 };
-add(10, "Pizza 🍕");
-add(100, "Going to movies 🍿", "Matilda");
-add(200, "Stuff", "Jay");
+const newBudget = addExpense(budget, spendingLimits, 10, "Pizza 🍕");
+console.log(newBudget);
+addExpense(budget, spendingLimits, 100, "Going to movies 🍿", "Matilda");
+addExpense(budget, spendingLimits, 200, "Stuff", "Jay");
 
 const checkExpenses = function () {
   for (const entry of budget) {
